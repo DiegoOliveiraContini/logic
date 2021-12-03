@@ -1,0 +1,157 @@
+<meta charset="utf-8">
+
+<canvas width="1200" height="800" ></canvas>
+
+<script>
+
+function strela (x, y)   {
+    pincel.fillStyle="white";
+    pincel.beginPath();
+			pincel.moveTo(x, y-5);
+			pincel.lineTo(x-1, y-1);
+			pincel.lineTo(x-5, y-1);
+			pincel.lineTo(x-2, y+1);
+			pincel.lineTo(x-3, y+5);
+			pincel.lineTo(x, y+3);
+			pincel.lineTo(x+3, y+5);
+			pincel.lineTo(x+2, y+1);
+			pincel.lineTo(x+5, y-1);
+			pincel.lineTo(x+1, y-1);
+			pincel.fill();
+			}
+
+function listra (x,y) { 
+
+    pincel.fillStyle="white";
+    pincel.beginPath();
+    pincel.moveTo(x ,y );
+    pincel.lineTo(x + 100,y + 30 );
+    pincel.lineTo(x,y + 20 );
+    pincel.moveTo(x ,y );
+    pincel.lineTo(x - 100,y + 30 );
+    pincel.lineTo(x,y + 50 );
+    pincel.fill();
+     }
+ function listra2 (x,y) { 
+
+	pincel.fillStyle="white";
+	pincel.beginPath();
+	pincel.moveTo(x ,y );
+	pincel.lineTo(x - 100,y - 30 );
+	pincel.lineTo(x,y );
+	pincel.moveTo(x ,y );
+	pincel.lineTo(x + 100,y - 30 );
+	pincel.lineTo(x,y - 50 );
+	pincel.fill();
+	 }	
+function listra3(x,y) { 
+    pincel.fillStyle = "white";
+    pincel.fillRect(x , y, + 50 , + 30)
+    pincel.fill();
+     }
+function listra4 (x,y) { 
+    pincel.fillStyle = "white";
+    pincel.fillRect(x , y, + 100 , + 20)
+    pincel.fill();
+    }
+function listra5(x, y) {
+
+        pincel.fillStyle = "white";
+        pincel.beginPath();
+        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        pincel.fill();
+
+        }
+function listra6(x, y) {
+    pincel.fillStyle = "white";
+    pincel.fillRect(x , y, + 78 , + 20)
+    pincel.fill();
+    }
+
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+     
+    pincel.fillStyle = "green";
+    pincel.fillRect(0, 0, 1200, 800)
+    pincel.fill();
+
+    pincel.fillStyle='yellow';
+    pincel.beginPath();
+    pincel.moveTo(0,400 );
+    pincel.lineTo(1200,400 );
+    pincel.lineTo(600,0 );
+    pincel.moveTo(0,400 );
+    pincel.lineTo(1200,400 );
+    pincel.lineTo(600,800 );
+    pincel.fill();
+
+     pincel.fillStyle = "blue";
+ pincel.beginPath();
+ pincel.arc(600, 400, 210, 0, 2 * 3.14);
+ pincel.fill();
+
+strela (620, 450)
+		strela (540, 480)
+		strela (700, 460)
+		strela (600, 580)
+		strela (730, 480)
+		strela (700, 411)
+		strela (600, 420)
+		strela (700, 300)
+		strela (740, 504)
+		strela (760, 520)
+		strela (750, 525)
+		strela (500, 400)
+		strela (450, 410)
+		strela (500, 400)
+		strela (670, 500)
+		strela (670, 560)
+		strela (700, 500)
+		strela (450, 500)
+		strela (460, 530)
+		strela (510, 560)
+		strela (520, 530)
+		strela (460, 490)
+		strela (490, 430)
+		strela (710, 560)
+		strela (720, 540)
+		strela (740, 532)
+		strela (470, 510)
+
+
+		listra (500, 290)
+		listra (700, 350)
+		listra (600, 320)
+		listra2 (601, 380)
+		listra (601, 330)
+		listra (510, 312)
+		listra2(500, 350)
+		listra2(420, 340) 
+		listra2(500, 360) 
+		listra4(710, 380)
+		listra4(700, 380)
+		listra4(670, 370)
+		listra4(709, 370)
+		listra4(708, 378)
+		listra4(415, 300)
+		listra4(409, 310)
+		listra5(420, 310)
+		listra5(425, 300)
+		listra4(409, 310)
+		listra4(403, 333)
+		listra5(410, 335)
+		listra5(410, 337)
+		listra5(430, 335)
+		listra5(407, 343)
+		listra5(409, 335)
+		listra5(411, 335)
+		listra5(413, 330)
+		listra5(410, 330)
+		listra5(415, 317)
+		listra6(421, 290)
+		listra6(396, 334)
+    
+		
+    </script>
