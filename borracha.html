@@ -1,0 +1,100 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"><h1>orede</h1></canvas>
+
+<script>
+
+    function borracha(x, y, tamanho,cor) {
+        pincel.fillStyle = cor
+        pincel.fillRect(x, y, tamanho, tamanho)
+        pincel.fill();
+    }
+
+    function lapiz(x, y, raio,cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+
+    }
+
+    function Cores() {
+
+        borracha(xborracha, yQuadrados, tamanhoQuadrados, 'white');
+        borracha(xlapiz, yQuadrados, tamanhoQuadrados, 'black');
+
+    }
+
+    function Mouse(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        if(desenha && podeDesenharNaArea(x,y)) {
+
+            lapiz(x, y, 5, corAtual);
+        }
+    }
+    function habilitaDesenhar() {
+
+        desenha = true;
+    }
+
+    function desabilitaDesenhar() {
+
+        desenha = false;
+    }
+
+    function podeDesenharNaArea(x, y) {
+
+         if(x >= 0 && x < 2*tamanhoQuadrados && y >= 0 && y < tamanhoQuadrados) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+function selecionaCor(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        
+        if (y > yQuadrados && y < yQuadrados + tamanhoQuadrados) {
+
+            if (x > xborracha && x < xborracha + tamanhoQuadrados) {
+
+                corAtual = 'white';
+
+            } else if (x > xlapiz && x < xlapiz + tamanhoQuadrados) {
+
+                corAtual = 'black';
+
+            } 
+        }
+    }
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var desenha = false;
+    var xborracha = 0;
+    var corAtual = 'black';
+
+    var xlapiz  = 60;
+    var yQuadrados = 0;
+    var tamanhoQuadrados = 55;
+
+    Cores();
+
+    tela.onmousemove = Mouse;
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
+
+    tela.onclick = selecionaCor;
+</script>
